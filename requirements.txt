@@ -1,7 +1,4 @@
 gunicorn==20.1.0
-mkl-fft
-mkl-random
-mkl-service
+pandas
 numpy
 scikit-learn
-wincertstore==0.2
