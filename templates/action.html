@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Recommender</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='assets/css/style.css')}}">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="nav-hamburger">
+                <img src="static/assets/image/ci_hamburger.svg" alt="">
+            </div>
+            <div class="nav-link" id="nav-link">
+                <button onclick="location.href='/'" class="btn-primary">Home</button>
+            </div>
+        </nav>
+
+        <!--Recommendation Result-->
+        <section class="results" id="rec-results">
+            <div class="main-title">
+                <h2 class="result-title" id="res-title"></h2>
+                <p class="result-desc" id="res-desc"></p>
+            </div>
+        </section>
+        <section class="song-container">
+            <div class="song-list" id="curr-song">
+            </div>
+        </section>
+        <section class="song-container" id="song-contain-rec">
+            <div class="song-list" id="rec-song">
+                {{ songrec | safe }}
+            </div>
+        </section>
+
+        <!--Foot-->
+        <section class="foot">
+            <div class="foot-wave">
+                <img src="static/assets/image/wave.svg" alt="">
+            </div>
+        </section>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{url_for("static", filename="js/jquery.js")}}">\x3C/script>')</script>
+    <script src="static/js/main.js"></script>
+    <script src="static/js/dom.js"></script>
+</body>
+</html>

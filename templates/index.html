@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Recommender</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='assets/css/style.css')}}">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="nav-hamburger">
+                <img src="static/assets/image/ci_hamburger.svg" alt="">
+            </div>
+            <div class="nav-link">
+                <a href="#" class="link-home">Home</a>
+                <button onclick="location.href='#search-feat'" class="btn-primary">Get Started</button>
+            </div>
+        </nav>
+
+        <!--Hero Section-->
+        <section class="hero">
+            <div class="title-heading">
+                <h1 class="hero-title-up">Music</h1>
+                <h1 class="hero-title-below">Recommender</h1>
+                <p class="hero-desc">Get some music recommendations 
+                    <br>to listen to, based on your mood.</p>
+                <button onclick="location.href='#search-feat'" class="btn-secondary">Get Started</button>
+            </div>
+            <div class="hero-illust">
+                <img src="static/assets/image/hero.svg" alt="hero">
+            </div>
+        </section>
+
+        <!--Search Recommendation-->
+        <section class="search-feature" id="search-feat">
+            <div class="main-title">
+                <h2 class="search-title">Get your recommendations</h2>
+                <p class="search-desc">by entering title of the song or artist name.</p>
+            </div>
+            <form method="post" id="form-input" action="/predict">
+                <div class="search-bar">
+                    <input type="text" name="songinput" placeholder="type artist name or song title here..." class="search-items" id="search-input">
+                    <a class="search-items" id="search-icon"><img src="static/assets/image/search.svg"></a>
+                </div>
+            </form>
+            <ul class="list-group" id="match-list"></ul>
+        </section>
+
+        <!--Recommendation Result
+        <section class="results" id="rec-results">
+            <div class="main-title">
+                <h2 class="result-title" id="res-title"></h2>
+                <p class="result-desc" id="res-desc"></p>
+            </div>
+        </section>
+        <section class="song-container">
+            <div class="song-list" id="curr-song">
+            </div>
+        </section>
+        <section class="song-container">
+            <div class="song-list" id="rec-song">
+                {{ songrec | safe }}
+            </div>
+        </section>
+        -->       
+
+        <!--Foot-->
+        <section class="foot" id="foot">
+            <div class="foot-wave">
+                <img src="static/assets/image/wave.svg" alt="">
+            </div>
+        </section>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{url_for("static", filename="js/jquery.js")}}">\x3C/script>')</script>
+    <script src="static/js/main.js"></script>
+    <script src="static/js/indexdom.js"></script>
+</body>
+</html>

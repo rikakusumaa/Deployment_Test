@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 1140px;
+    margin: 0 auto;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+
+a.link-home{
+    color: #1E1E20;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+button.btn-primary{
+    background-color: #153E5C;
+    padding: 13px 25px;
+    border: none;
+    border-radius: 30px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+button.btn-secondary{
+    background-color: #ffffff;
+    padding: 15px 20px;
+    border: 3px solid #153E5C;
+    border-radius: 25px;
+    color: #000000;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.nav-link{
+    width: 22%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section.hero{
+    display: flex;
+    width: 100%;
+    height: 96vh;
+    justify-content: space-between;
+}
+
+.hero-illust img{
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -9999;
+}
+
+.title-heading{
+    padding-top: 150px;
+    width: 50%;
+}
+
+h1.hero-title-up{
+    font-size: 72px;
+    color: #000000;
+    font-weight: 600;
+
+}
+
+h1.hero-title-below{
+    font-size: 55px;
+    margin-top: -4%;
+    margin-bottom: -4%;
+    color: #000000;
+    font-weight: 600;
+}
+
+p.hero-desc{
+    font-size: 22px;
+    color: #000000;
+    font-weight: 300;
+    margin: 24px 0;
+}
+
+.search-feature{
+    height: 50vh;
+}
+
+.main-title{
+    width: 100%;
+    height: 27vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: -10px;
+}
+
+h2.search-title{
+    font-size: 45px;
+    color: #000000;
+    font-weight: 600;
+}
+
+p.search-desc{
+    font-size: 22px;
+    color: #000000;
+    font-weight: 300;
+}
+
+.search-bar{
+    width: 60%;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #153E5C;
+    border-radius: 20px;
+    margin-left: 20%;
+}
+
+.search-items{
+    position: relative;
+    width: 100%;
+    height: 80%;
+}
+
+#search-input{
+    border: none;
+    height: 90%;
+    width: 1000pc;
+    background: none;
+    margin-left: 20px;
+    padding: 0px 5px;
+    border-radius: 20px;
+    font-size: 22px;
+}
+
+#search-icon{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#search-input:focus{
+    outline: none;
+}
+
+h2.result-title{
+    font-size: 45px;
+    color: #000000;
+    font-weight: 600;
+}
+
+p.result-desc{
+    font-size: 22px;
+    color: #000000;
+    font-weight: 300;
+}
+
+.result{
+    height: 100vh;
+}
+
+.song-container{
+    width: 100%;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.song-container > .song-list{
+    padding: 16px;
+}
+
+.song-container > .song-list > .song-item{
+    padding: 8px 16px 16px 16px;
+    background-color: #D0D8DE;
+    box-shadow: 0px 1px 5px grey;
+    width: 80%;
+    margin: 10px 0;
+    border-radius: 20px;
+}
+
+.song-container > .song-list > .song-item > h3, p{
+    margin: 8px 0px;
+}
+
+/*section.foot-wave{
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.foot-wave img{
+    position: relative;
+    display: block;
+    width: 100%;
+    z-index: -99999;
+}*/
+
+section.foot{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.foot-wave img{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: -9999;
+}
+
+.search-feature > ul{
+    list-style-type: none;
+    padding: 16px;
+    margin-top: -10px;
+    width: 63%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 18.5%;
+}
+
+.search-feature > ul > li{
+    background-color: #D0D8DE;
+    box-shadow: 0px 1px 5px grey;
+    margin: 10px 0;
+    border-radius: 20px;
+    font-size: 18px;
+    padding: 20px;
+}
+
+#curr-song{
+    color: #153E5C;
+    background-color: #D0D8DE;
+    box-shadow: 0px 1px 5px grey;
+    width: 80%;
+    margin: 10px 0;
+    border-radius: 20px;
+    font-size: 30px;
+    padding: 20px;
+    margin-left: 10%;
+    display: none;
+}
+
+.dataframe {
+    border: none;
+    border-collapse: collapse;
+    margin: 25px auto;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0px 1px 5px grey;
+    border-radius: 15px 15px 0 0;
+    overflow: hidden;
+}
+
+.dataframe thead tr {
+    background-color: #153E5C;
+    color: #ffffff;
+    text-align: left;
+}
+
+.dataframe th,
+.dataframe td {
+    padding: 12px 15px;
+}
+
+.dataframe tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.dataframe tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.dataframe tbody tr:last-of-type {
+    border-bottom: 2px solid #153E5C;
+}
+
+
+
