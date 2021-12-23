@@ -24,17 +24,19 @@ df_cbf = pd.DataFrame({
     'gabungan': df['gabungan']
 })
 
+df_new = df_cbf.sample(n=5000, random_state=1)
+
 # Inisialisasi TfidfVectorizer
 tf = TfidfVectorizer()
  
 # Melakukan perhitungan idf pada data gabungan
-tf.fit(df_cbf['gabungan']) 
+tf.fit(df_new['gabungan']) 
  
 # Mapping array dari fitur index integer ke fitur nama
 tf.get_feature_names() 
 
 # Melakukan fit lalu ditransformasikan ke bentuk matrix
-tfidf_matrix = tf.fit_transform(df_cbf['gabungan']) 
+tfidf_matrix = tf.fit_transform(df_new['gabungan']) 
  
 # Melihat ukuran matrix tfidf
 tfidf_matrix.shape
@@ -45,7 +47,7 @@ tfidf_matrix.todense()
 pd.DataFrame(
     tfidf_matrix.todense(), 
     columns=tf.get_feature_names(),
-    index=df_cbf['artist_music'],
+    index=df_new['artist_music'],
 )
 
 # Menghitung cosine similarity pada matrix tf-idf
@@ -53,13 +55,13 @@ cosine_sim = cosine_similarity(tfidf_matrix)
 cosine_sim
 
 # Membuat dataframe dari variabel cosine_sim dengan baris dan kolom berupa artist_music
-cosine_sim_df = pd.DataFrame(cosine_sim, index=df_cbf['artist_music'], columns=df_cbf['artist_music'])
+cosine_sim_df = pd.DataFrame(cosine_sim, index=df_new['artist_music'], columns=df_new['artist_music'])
 print('Shape:', cosine_sim_df.shape)
  
 # Melihat similarity matrix pada setiap artist_music
 cosine_sim_df.sample(5, axis=1).sample(10, axis=0)
 
-def music_recommendations(artist_music, similarity_data=cosine_sim_df, items=df_cbf[['artist_music','music_name','artist_name','moods']], k=10):
+def music_recommendations(artist_music, similarity_data=cosine_sim_df, items=df_new[['artist_music','music_name','artist_name','moods']], k=10):
     
     index = similarity_data.loc[:,artist_music].to_numpy().argpartition(range(-1, -k, -1))
     
