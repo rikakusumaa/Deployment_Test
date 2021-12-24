@@ -20,19 +20,6 @@ def predict():
         print(rec)
         return render_template("action.html", songrec='{}'.format(rec))
 
-""""
-@app.route("/", methods = ["POST","GET"])
-def main():
-    if request.method == "POST":
-        result = request.form
-        songinput = result['songinput']
-        if songinput is not None:
-            rec = rs.music_recommendations(songinput)
-            print(rec)
-            return render_template("index.html", songrec='{}'.format(rec))
-
-    return render_template("index.html")
-"""
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='localhost', debug=True)

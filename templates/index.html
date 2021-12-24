@@ -11,11 +11,11 @@
     <div class="container">
         <nav>
             <div class="nav-hamburger">
-                <img src="static/assets/image/ci_hamburger.svg" alt="">
+                <a class="hamburger" id="hamburger"><img src="static/assets/image/ci_hamburger.svg" alt=""></a>
             </div>
             <div class="nav-link">
-                <a href="#" class="link-home">Home</a>
-                <button onclick="location.href='#search-feat'" class="btn-primary">Get Started</button>
+                <a href="#" class="link-home" id="nav-list">Home</a>
+                <button onclick="location.href='#search-feat'" class="btn-primary" id="nav-list">Get Started</button>
             </div>
         </nav>
 
@@ -78,5 +78,6 @@
     <script>window.jQuery || document.write('<script src="{{url_for("static", filename="js/jquery.js")}}">\x3C/script>')</script>
     <script src="static/js/main.js"></script>
     <script src="static/js/indexdom.js"></script>
+    <script src="static/js/hamburg.js"></script>
 </body>
 </html>

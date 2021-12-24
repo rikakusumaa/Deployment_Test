@@ -1,6 +1,8 @@
-Flask
+certifi==2020.12.5
 gunicorn==20.1.0
-pandas
+mkl-fft
+mkl-random
+mkl-service
 numpy
-scikit-learn
-matplotlib
+six==1.15.0
+wincertstore==0.2
